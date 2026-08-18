@@ -1,4 +1,4 @@
-name: Build Windows EXE v2
+name: Build Windows EXE v3
 
 on:
   workflow_dispatch:
@@ -26,10 +26,10 @@ jobs:
 
       - name: Build standalone EXE
         run: |
-          pyinstaller --noconfirm --clean --onefile --windowed --name Buncombe_MSD_DXF_v2 buncombe_msd_to_dxf_v2.py
+          pyinstaller --noconfirm --clean --onefile --windowed --name Buncombe_MSD_DXF_v3 buncombe_msd_to_dxf_v3.py
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
         with:
-          name: Buncombe_MSD_DXF_v2_Windows
-          path: dist/Buncombe_MSD_DXF_v2.exe
+          name: Buncombe_MSD_DXF_v3_Windows
+          path: dist/Buncombe_MSD_DXF_v3.exe
