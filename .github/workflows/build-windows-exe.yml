@@ -1,4 +1,4 @@
-name: Build NC Project GIS Pull v5
+name: Build NC Project GIS Pull v6
 on:
   workflow_dispatch:
   push:
@@ -11,9 +11,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - run: python -m pip install --upgrade pip
       - run: pip install -r requirements.txt
-      - run: pyinstaller --noconfirm --clean --onefile --windowed --name NC_Project_GIS_Pull_v5 nc_project_gis_pull_v5.py
+      - run: pyinstaller --noconfirm --clean --onefile --windowed --name NC_Project_GIS_Pull_v6 nc_project_gis_pull_v6.py
       - uses: actions/upload-artifact@v4
         with:
-          name: NC_Project_GIS_Pull_v5_Windows
-          path: dist/NC_Project_GIS_Pull_v5.exe
+          name: NC_Project_GIS_Pull_v6_Windows
+          path: dist/NC_Project_GIS_Pull_v6.exe
